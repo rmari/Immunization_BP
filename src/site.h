@@ -1,5 +1,5 @@
-#ifndef __Immunization_BP_VariableSite__
-#define __Immunization_BP_VariableSite__
+#ifndef __Site__
+#define __Site__
 
 #include <vector>
 
@@ -7,35 +7,34 @@ using namespace std;
 
 class Edge;
 
-class VariableSite{
+class Site{
  private:
-	double field;
-	double old_field;
-
-
- public:
 	vector <Edge*> edges;
+ public:
+
 	int name;
 
-	VariableSite(int sname){
+	Site(int sname){
 		name=sname;
-		field=0;
-		old_field=0;
 	}
 
-	double field(){
-		return field;
-	}
-	void field(double newfield){
-		old_field=field;
-		field = newfield;
+	~Site(){
+		edges.clear()
 	}
 
-	double relative_step(){
-		return (field-old_field)/(field+old_field);
+	void addEdge(Edge* e){
+		edges.push_back(e);
 	}
+
+	iterator edgeBegin(){
+		return edges.begin();
+	}
+	iterator edgeEnd(){
+		return edges.end();
+	}
+
 	
 };
-#endif // #ifndef __Immunization_BP_VariableSite__
+#endif //#ifndef _Site__
 
 
