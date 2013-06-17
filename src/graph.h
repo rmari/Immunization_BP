@@ -2,6 +2,7 @@
 #define __Graph__
 
 #include <vector>
+
 #include "site.h"
 #include "edge.h"
 
@@ -18,6 +19,21 @@ class Graph{
 
 	Graph(){};
 	~Graph(){};
+	
+	void addSite(int sitename){
+		Site s = Site(sitename);
+		sites.push_back(s);
+	}
+
+	void addEdge(Site &a, Site &b){
+		Edge e = { &a, &b };
+		
+		a.addEdge(&e);
+		b.addEdge(&e);
+
+		edges.push_back(e);
+	}
+
 
 };
 #endif // #ifndef __Graph__

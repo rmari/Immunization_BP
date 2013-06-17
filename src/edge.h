@@ -1,10 +1,13 @@
+#include "site.h"
+
 #ifndef __Edge__
 #define __Edge__
 
+class Site;
 struct Edge{
-	int site1;
-	int site2;
-}
+	const Site *site1;
+	const Site *site2;
+};
 
 #endif // #ifndef __Edge__
 

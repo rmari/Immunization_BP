@@ -1,7 +1,8 @@
 #ifndef __SIR_MP__
 #define __SIR_MP__
 
-#include <array>
+#include "graph.h"
+#include "MP_algo.h"
 
 using namespace std;
 
@@ -11,17 +12,13 @@ class MPalgo;
 class SIR_MP: public MPalgo{
 
  private:
-	Graph *g;
-	int *gconf;
-
-	double *messages;
 
  public:
 	
-	SIR_MP(){};
+	SIR_MP(const Graph &gr) : MPalgo(gr) {};
 	~SIR_MP(){};
 
-	MP_iteration(iterator);
+	virtual double MP_iteration(vector<ScalarMessage>::iterator m);
 
 };
 #endif // #ifndef __SIR_MP__

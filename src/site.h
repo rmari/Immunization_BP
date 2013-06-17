@@ -19,17 +19,17 @@ class Site{
 	}
 
 	~Site(){
-		edges.clear()
+		edges.clear();
 	}
 
 	void addEdge(Edge* e){
 		edges.push_back(e);
 	}
 
-	iterator edgeBegin(){
+	vector<Edge*>::iterator edgeBegin(){
 		return edges.begin();
 	}
-	iterator edgeEnd(){
+	vector<Edge*>::iterator edgeEnd(){
 		return edges.end();
 	}
 

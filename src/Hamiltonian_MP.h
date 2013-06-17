@@ -11,17 +11,14 @@ class MPalgo;
 class Hamiltonian_MP: public MPalgo{
 
  private:
-	Graph *g;
-	int *gconf;
-
-	double *messages;
 
  public:
 	
-	Hamiltonian_MP(){};
+ Hamiltonian_MP(const Graph &gr) : MPalgo(gr) {};
 	~Hamiltonian_MP(){};
 
-	MP_iteration(iterator);
+	virtual double MP_iteration(iterator);
+
 
 };
 #endif // #ifndef __Hamiltonian_MP__
