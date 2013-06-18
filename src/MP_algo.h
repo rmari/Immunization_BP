@@ -26,8 +26,7 @@ class MPalgo{
 	
  protected:
 	const Graph *g;
-	vector <ScalarMessage> messages;
-	vector <ScalarMessage> new_messages;
+	//	vector <ScalarMessage> new_messages;
 
 
  public:
@@ -36,11 +35,11 @@ class MPalgo{
 		g=&gr;
 		iteration_nb = 0;
 	}
-	~MPalgo();
+	~MPalgo(){};
 
 	void iterate();
 	virtual double MP_iteration(vector<ScalarMessage>::iterator m) = 0;
-	virtual void exportFields(vector<double>) = 0;
-	
+	virtual void exportFields(vector<double>*) = 0;
+	vector <ScalarMessage> messages;	
 };
 #endif // #ifndef __MPalgo__

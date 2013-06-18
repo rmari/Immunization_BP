@@ -26,11 +26,11 @@ class Graph{
 	}
 
 	void addEdge(Site &a, Site &b){
-		Edge e = { &a, &b };
+		Edge e = { &a, &b, edgeNb() };
 		
 		a.addEdge(&e);
 		b.addEdge(&e);
-
+		
 		edges.push_back(e);
 	}
 
