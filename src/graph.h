@@ -34,6 +34,13 @@ class Graph{
 		edges.push_back(e);
 	}
 
+	int siteNb() const{
+		return sites.size();
+	}
+
+	int edgeNb() const{
+		return edges.size();
+	}
 
 };
 #endif // #ifndef __Graph__
